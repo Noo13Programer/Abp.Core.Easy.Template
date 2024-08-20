@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Abp.Core.Easy.Template</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abp.Core.Easy.Template.Domain\Abp.Core.Easy.Template.Domain.csproj" />
+    <ProjectReference Include="..\Abp.Core.Easy.Template.Application.Contracts\Abp.Core.Easy.Template.Application.Contracts.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="8.2.2" />
+	</ItemGroup>
+
+</Project>

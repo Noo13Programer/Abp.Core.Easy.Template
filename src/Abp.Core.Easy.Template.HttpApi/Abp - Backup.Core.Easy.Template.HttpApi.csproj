@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Identity</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Identity.Application.Contracts\Abp.Core.Easy.Template.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="8.2.2" />
+  </ItemGroup>
+
+</Project>
