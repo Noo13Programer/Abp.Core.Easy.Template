@@ -36,6 +36,7 @@ using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.Security.Claims;
 using Volo.Abp.Studio.Client.AspNetCore;
+using Volo.Abp.AspNetCore.Mvc.Conventions;
 
 namespace Abp.Core.Easy.Template.Web;
 
@@ -184,10 +185,15 @@ public class WebModule : AbpModule
     {
         Configure<AbpAspNetCoreMvcOptions>(options =>
         {
-
             options.ConventionalControllers.Create(typeof(ApplicationModule).Assembly, opt =>
             {
-                opt.RootPath = Configuration["App:RootPath"];
+                
+                string rootPath = Configuration["App:RootPath"];
+                if (!string.IsNullOrWhiteSpace(rootPath))
+                {
+                    opt.RootPath = rootPath;
+                }
+               
             });
         });
     }
@@ -210,17 +216,18 @@ public class WebModule : AbpModule
         var app = context.GetApplicationBuilder();
         var env = context.GetEnvironment();
 
+
         if (env.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
         }
+        
 
         app.UseAbpRequestLocalization();
 
         if (!env.IsDevelopment())
         {
             app.UseErrorPage();
-            app.UseHsts();
         }
 
         app.UseCorrelationId();
@@ -230,10 +237,10 @@ public class WebModule : AbpModule
         app.UseRouting();
         app.UseAuthentication();
 
-        if (MultiTenancyConsts.IsEnabled)
+        /*if (MultiTenancyConsts.IsEnabled)
         {
             app.UseMultiTenancy();
-        }
+        }*/
 
         app.UseUnitOfWork();
         app.UseDynamicClaims();

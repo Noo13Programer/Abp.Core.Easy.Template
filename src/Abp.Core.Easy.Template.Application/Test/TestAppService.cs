@@ -7,6 +7,7 @@ using Volo.Abp;
 
 namespace Abp.Core.Easy.Template.Test
 {
+    [RemoteService(IsEnabled =false)]
     public class TestAppService : AppService,ITestAppService
     {
         public async Task<string> Test()

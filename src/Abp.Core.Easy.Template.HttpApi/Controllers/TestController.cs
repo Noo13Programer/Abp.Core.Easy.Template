@@ -10,7 +10,7 @@ using Volo.Abp;
 namespace Abp.Core.Easy.Template.Controllers
 {
     [RemoteService]
-    [Route("api/test")]
+    [Route("api/tets")]
     public class TestController:Controller,ITestAppService
     {
         private readonly ITestAppService _testAppService;
