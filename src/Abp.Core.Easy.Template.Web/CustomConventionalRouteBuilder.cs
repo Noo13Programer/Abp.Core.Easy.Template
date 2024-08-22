@@ -34,9 +34,9 @@ namespace Abp.Core.Easy.Template
             var controllerNameInUrl =
                 NormalizeUrlControllerName(rootPath, controllerName, action, httpMethod, configuration);
 
-            var url = $"{apiRoutePrefix}/{rootPath}/{NormalizeControllerNameCase(controllerNameInUrl, configuration)}";
+            var url = $"/{apiRoutePrefix}/{NormalizeControllerNameCase(controllerNameInUrl, configuration)}";
 
-            //Add {id} path if needed
+            /*//Add {id} path if needed
             //占位符添加
             var idParameterModel = action.Parameters.FirstOrDefault(p => p.ParameterName == "id");
             if (idParameterModel != null)
@@ -56,7 +56,7 @@ namespace Abp.Core.Easy.Template
                         url += "/{" + NormalizeIdPropertyNameCase(property, configuration) + "}";
                     }
                 }
-            }
+            }*/
 
             //Add action name if needed
 

@@ -6,7 +6,6 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <RootNamespace>Abp.Core.Easy.Template.DbMigrator</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,8 +18,8 @@
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Autofac" Version="8.2.1" />
-    <ProjectReference Include="..\Abp.Core.Easy.Template.EntityFrameworkCore\Abp.Core.Easy.Template.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Abp.Core.Easy.Template.Application.Contracts\Abp.Core.Easy.Template.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Abp.Core.Easy.Template.EntityFrameworkCore\Abp.Core.Easy.Template.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -6,7 +6,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <RootNamespace>Abp.Core.Easy.Template</RootNamespace>
+    <RootNamespace>Abp.Core.Easy.Template.Web</RootNamespace>
     <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
@@ -48,8 +48,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Abp.Core.Easy.Template.EntityFrameworkCore\Abp.Core.Easy.Template.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\Abp.Core.Easy.Template.Application\Abp.Core.Easy.Template.Application.csproj" />
+    <ProjectReference Include="..\Abp.Core.Easy.Template.HttpApi\Abp.Core.Easy.Template.HttpApi.csproj" />
     <ProjectReference Include="..\Abp.Core.Easy.Template.EntityFrameworkCore\Abp.Core.Easy.Template.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
@@ -63,6 +63,7 @@
   <ItemGroup>
     <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite" Version="3.2.1" />
   </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Studio.Client.AspNetCore" Version="0.7.7" />

@@ -9,22 +9,22 @@ using Volo.Abp;
 
 namespace Abp.Core.Easy.Template.Controllers
 {
-    [RemoteService]
-    [Route("api/tets")]
-    public class TestController:Controller,ITestAppService
+   [Route("api/test")]
+    public class TestController:TemplateController,ITestAppService
     {
         private readonly ITestAppService _testAppService;
 
+       
         public TestController(ITestAppService testAppService)
         {
             _testAppService = testAppService;
         }
 
-
         [HttpGet]
-        public async Task<string> Test()
+        [Route("{id}")]
+        public Task<string> Test(int id)
         {
-            return await _testAppService.Test();
+            return _testAppService.Test(id);
         }
     }
 }

@@ -9,6 +9,6 @@ namespace Abp.Core.Easy.Template.Test
 {
     public interface ITestAppService:IApplicationService
     {
-        Task<string> Test();
+        Task<string> Test(int id);
     }
 }

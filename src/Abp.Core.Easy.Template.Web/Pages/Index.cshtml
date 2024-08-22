@@ -6,12 +6,12 @@
 @using Abp.Core.Easy.Template.Localization
 @using Volo.Abp.Users
 @inject IPageLayout PageLayout
-@inject IHtmlLocalizer<Resource> L
+@inject IHtmlLocalizer<TemplateResource> L
 @inject ICurrentUser CurrentUser
 @{
     ViewBag.PageTitle = L["Home"];
     PageLayout.Content.Title = L["Home"].Value;
-    PageLayout.Content.MenuItemName = IdentityMenus.Home;
+    PageLayout.Content.MenuItemName = TemplateMenus.Home;
 }
 
 <abp-card>

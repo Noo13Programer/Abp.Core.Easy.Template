@@ -34,7 +34,7 @@ public class Program
                         .WriteTo.Async(c => c.Console())
                         .WriteTo.Async(c => c.AbpStudio(services));
                 });
-            await builder.AddApplicationAsync<WebModule>();
+            await builder.AddApplicationAsync<TemplateWebModule>();
             var app = builder.Build();
             await app.InitializeApplicationAsync();
             await app.RunAsync();

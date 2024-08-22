@@ -1,13 +1,13 @@
 {
-  "id": "83df8b7f-86dd-4872-bb97-cb394bf54ae4",
+  "id": "11f305ee-2cdb-4a2b-9f37-35628f6ef65d",
   "template": "app",
   "versions": {
     "AbpFramework": "8.2.1",
     "AbpStudio": "0.7.7"
   },
   "modules": {
-    "Identity": {
-      "path": "Identity.abpmdl"
+    "Abp.Core.Easy.Template": {
+      "path": "Abp.Core.Easy.Template.abpmdl"
     }
   }, 
   "runProfiles": {

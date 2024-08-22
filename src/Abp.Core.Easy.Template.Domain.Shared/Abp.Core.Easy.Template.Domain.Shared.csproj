@@ -20,8 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Localization\Abp.Core.Easy.Template\*.json" />
-    <Content Remove="Localization\Abp.Core.Easy.Template\*.json" />
+    <EmbeddedResource Include="Localization\Template\*.json" />
+    <Content Remove="Localization\Template\*.json" />
   </ItemGroup>
 
 </Project>

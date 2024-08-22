@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Abp.Core.Easy.Template.Data;
 using Serilog;
 using Volo.Abp;
 using Volo.Abp.Data;
@@ -23,7 +22,7 @@ public class DbMigratorHostedService : IHostedService
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
-        using (var application = await AbpApplicationFactory.CreateAsync<DbMigratorModule>(options =>
+        using (var application = await AbpApplicationFactory.CreateAsync<TemplateDbMigratorModule>(options =>
         {
            options.Services.ReplaceConfiguration(_configuration);
            options.UseAutofac();
@@ -32,11 +31,6 @@ public class DbMigratorHostedService : IHostedService
         }))
         {
             await application.InitializeAsync();
-
-            await application
-                .ServiceProvider
-                .GetRequiredService<IdentityDbMigrationService>()
-                .MigrateAsync();
 
             await application.ShutdownAsync();
 

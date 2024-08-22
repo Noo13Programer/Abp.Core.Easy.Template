@@ -25,64 +25,64 @@
     }
   },
   "packages": {
-    "Identity.Application": {
-      "path": "src/Identity.Application/Identity.Application.abppkg",
+    "Abp.Core.Easy.Template.Application": {
+      "path": "src/Abp.Core.Easy.Template.Application/Abp.Core.Easy.Template.Application.abppkg",
       "folder": "src"
     },
-    "Identity.Application.Tests": {
-      "path": "test/Identity.Application.Tests/Identity.Application.Tests.abppkg",
+    "Abp.Core.Easy.Template.Application.Tests": {
+      "path": "test/Abp.Core.Easy.Template.Application.Tests/Abp.Core.Easy.Template.Application.Tests.abppkg",
       "folder": "test"
     },
-    "Identity.Domain.Shared": {
-      "path": "src/Identity.Domain.Shared/Identity.Domain.Shared.abppkg",
+    "Abp.Core.Easy.Template.Domain.Shared": {
+      "path": "src/Abp.Core.Easy.Template.Domain.Shared/Abp.Core.Easy.Template.Domain.Shared.abppkg",
       "folder": "src"
     },
-    "Identity.Application.Contracts": {
-      "path": "src/Identity.Application.Contracts/Identity.Application.Contracts.abppkg",
+    "Abp.Core.Easy.Template.Application.Contracts": {
+      "path": "src/Abp.Core.Easy.Template.Application.Contracts/Abp.Core.Easy.Template.Application.Contracts.abppkg",
       "folder": "src"
     },
-    "Identity.HttpApi": {
-      "path": "src/Identity.HttpApi/Identity.HttpApi.abppkg",
+    "Abp.Core.Easy.Template.HttpApi": {
+      "path": "src/Abp.Core.Easy.Template.HttpApi/Abp.Core.Easy.Template.HttpApi.abppkg",
       "folder": "src"
     },
-    "Identity.HttpApi.Client": {
-      "path": "src/Identity.HttpApi.Client/Identity.HttpApi.Client.abppkg",
+    "Abp.Core.Easy.Template.HttpApi.Client": {
+      "path": "src/Abp.Core.Easy.Template.HttpApi.Client/Abp.Core.Easy.Template.HttpApi.Client.abppkg",
       "folder": "src"
     },
-    "Identity.Web": {
-      "path": "src/Identity.Web/Identity.Web.abppkg",
+    "Abp.Core.Easy.Template.Web": {
+      "path": "src/Abp.Core.Easy.Template.Web/Abp.Core.Easy.Template.Web.abppkg",
       "folder": "src"
     },
-    "Identity.Web.Tests": {
-      "path": "test/Identity.Web.Tests/Identity.Web.Tests.abppkg",
+    "Abp.Core.Easy.Template.Web.Tests": {
+      "path": "test/Abp.Core.Easy.Template.Web.Tests/Abp.Core.Easy.Template.Web.Tests.abppkg",
       "folder": "test"
     },
-    "Identity.EntityFrameworkCore.Tests": {
-      "path": "test/Identity.EntityFrameworkCore.Tests/Identity.EntityFrameworkCore.Tests.abppkg",
+    "Abp.Core.Easy.Template.EntityFrameworkCore.Tests": {
+      "path": "test/Abp.Core.Easy.Template.EntityFrameworkCore.Tests/Abp.Core.Easy.Template.EntityFrameworkCore.Tests.abppkg",
       "folder": "test"
     },
-    "Identity.EntityFrameworkCore": {
-      "path": "src/Identity.EntityFrameworkCore/Identity.EntityFrameworkCore.abppkg",
+    "Abp.Core.Easy.Template.EntityFrameworkCore": {
+      "path": "src/Abp.Core.Easy.Template.EntityFrameworkCore/Abp.Core.Easy.Template.EntityFrameworkCore.abppkg",
       "folder": "src"
     },
-    "Identity.TestBase": {
-      "path": "test/Identity.TestBase/Identity.TestBase.abppkg",
+    "Abp.Core.Easy.Template.TestBase": {
+      "path": "test/Abp.Core.Easy.Template.TestBase/Abp.Core.Easy.Template.TestBase.abppkg",
       "folder": "test"
     },
-    "Identity.Domain.Tests": {
-      "path": "test/Identity.Domain.Tests/Identity.Domain.Tests.abppkg",
+    "Abp.Core.Easy.Template.Domain.Tests": {
+      "path": "test/Abp.Core.Easy.Template.Domain.Tests/Abp.Core.Easy.Template.Domain.Tests.abppkg",
       "folder": "test"
     },
-    "Identity.HttpApi.Client.ConsoleTestApp": {
-      "path": "test/Identity.HttpApi.Client.ConsoleTestApp/Identity.HttpApi.Client.ConsoleTestApp.abppkg",
+    "Abp.Core.Easy.Template.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/Abp.Core.Easy.Template.HttpApi.Client.ConsoleTestApp/Abp.Core.Easy.Template.HttpApi.Client.ConsoleTestApp.abppkg",
       "folder": "test"
     },
-    "Identity.DbMigrator": {
-      "path": "src/Identity.DbMigrator/Identity.DbMigrator.abppkg",
+    "Abp.Core.Easy.Template.DbMigrator": {
+      "path": "src/Abp.Core.Easy.Template.DbMigrator/Abp.Core.Easy.Template.DbMigrator.abppkg",
       "folder": "src"
     },
-    "Identity.Domain": {
-      "path": "src/Identity.Domain/Identity.Domain.abppkg",
+    "Abp.Core.Easy.Template.Domain": {
+      "path": "src/Abp.Core.Easy.Template.Domain/Abp.Core.Easy.Template.Domain.abppkg",
       "folder": "src"
     }
   }

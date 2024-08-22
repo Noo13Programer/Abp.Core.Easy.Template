@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.Options;
 using System;
@@ -36,11 +37,11 @@ namespace Abp.Core.Easy.Template
             {
                 return;
             }
-            //存在有route标注的控制器
+            /*//存在有route标注的控制器
             if (controller.Selectors.Any(selector => selector.AttributeRouteModel != null))
             {
                 return;
-            }
+            }*/
 
             //获取根路径 app/控制器名 or app/配置根路径
             var rootPath = GetRootPathOrDefault(controller.ControllerType.AsType());
@@ -50,8 +51,54 @@ namespace Abp.Core.Easy.Template
 
             foreach (var action in controller.Actions)
             {
-                ConfigureSelector(rootPath, controller.ControllerName, action, configuration);
+                ConfigureSelector(rootPath, controllerName, action, configuration);
             }
         }
+
+        protected override void ConfigureSelector(string rootPath, string controllerName, ActionModel action, ConventionalControllerSetting? configuration)
+        {
+            //过滤没打route的方法
+            RemoveEmptySelectors(action.Selectors);
+            //反射拿到所有标注RemoteService的方法名
+            var remoteServiceAtt = ReflectionHelper.GetSingleAttributeOrDefault<RemoteServiceAttribute>(action.ActionMethod);
+            //存在且关闭状态
+            if (remoteServiceAtt != null && !remoteServiceAtt.IsEnabledFor(action.ActionMethod))
+            {
+                return;
+            }
+
+            //规范路由命名
+            NormalizeSelectorRoutes(rootPath, controllerName, action, configuration);
+        }
+
+        protected override void NormalizeSelectorRoutes(string rootPath, string controllerName, ActionModel action, ConventionalControllerSetting? configuration)
+        {
+            foreach (var selector in action.Selectors)
+            {
+                //拿到请求类型
+                var httpMethod = selector.ActionConstraints
+                    .OfType<HttpMethodActionConstraint>()
+                    .FirstOrDefault()?
+                    .HttpMethods?
+                    .FirstOrDefault();
+
+                //没写默认约束
+                if (httpMethod == null)
+                {
+                    httpMethod = SelectHttpMethod(action, configuration);
+                }
+
+                //规范route
+                selector.AttributeRouteModel = CreateAbpServiceAttributeRouteModel(rootPath, controllerName, action, httpMethod, configuration);
+                
+
+                if (!selector.ActionConstraints.OfType<HttpMethodActionConstraint>().Any())
+                {
+                    selector.ActionConstraints.Add(new HttpMethodActionConstraint(new[] { httpMethod }));
+                }
+            }
+        }
+
+
     }
 }
